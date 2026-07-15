@@ -17,8 +17,7 @@ export default function FinalSlide() {
 				</p>
 
 				<div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' }}>
-					<a href="/" className="eyebrow" style={{ textDecoration: 'none', color: 'var(--ink)', background: 'var(--gold)', padding: '12px 22px', fontSize: 11 }}>Share This Invite</a>
-					<a href="mailto:celebrate@charanandsindhuja.com" className="eyebrow" style={{ textDecoration: 'none', color: 'var(--gold-light)', border: '1px solid rgba(201,162,75,0.45)', padding: '12px 22px', fontSize: 11 }}>RSVP</a>
+					<motion.a href="/" className="eyebrow" style={{ textDecoration: 'none', color: 'var(--ink)', background: 'var(--gold)', padding: '12px 22px', fontSize: 11, borderRadius: 999, boxShadow: '0 18px 40px rgba(0,0,0,0.2)', fontFamily: 'Cormorant Garamond, serif', fontSize: 15, fontWeight: 600, }} whileHover={{ y: -2, scale: 1.01 }}> Share This Invite </motion.a>
 				</div>
 			</motion.div>
 		</section>

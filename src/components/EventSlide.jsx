@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import BotanicalOrnament from './BotanicalOrnament'
 
-export default function EventSlide({ label, heading, description, date, time, venue, dressCode, mapsUrl, dark = false }) {
+export default function EventSlide({ label, heading, description, date, time, venue, dressCode, url, dark = false }) {
 	const bg = dark ? 'var(--ink)' : 'var(--ivory)'
 	const textHeading = dark ? 'var(--gold-light)' : 'var(--text-on-light)'
 	const textBody = dark ? 'var(--text-muted-dark)' : 'var(--text-muted-light)'
@@ -36,10 +36,20 @@ export default function EventSlide({ label, heading, description, date, time, ve
 					))}
 				</div>
 
-				{mapsUrl && (
-					<a href={mapsUrl} target="_blank" rel="noreferrer" className="eyebrow" style={{ display: 'inline-block', marginTop: 22, color: labelColor, fontSize: 11, textDecoration: 'none', borderBottom: `1px solid ${lineColor}`, paddingBottom: 3 }}>
-						Open Map
-					</a>
+				{url && (<>
+					<div style={{ marginTop: 30, display: 'flex', justifyContent: 'center', gap: 14, flexWrap: 'wrap' }}>
+						<motion.a
+							href={url}
+							target="_blank"
+							rel="noreferrer"
+							className="eyebrow"
+							whileHover={{ y: -2, scale: 1.01 }}
+							style={{ textDecoration: 'none', color: 'var(--ink)', background: 'var(--gold)', padding: '12px 22px', fontSize: 11, borderRadius: 999, background: 'linear-gradient(135deg, #c9a24b, #e8cf94)', boxShadow: '0 18px 40px rgba(0,0,0,0.2)', fontFamily: 'Cormorant Garamond, serif', fontSize: 15, fontWeight: 600, }}
+						>
+							View Location
+						</motion.a>
+					</div>
+				</>
 				)}
 			</motion.div>
 		</section>

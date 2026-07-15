@@ -14,7 +14,7 @@ export default function HeroSlide() {
 
             <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', height: '100%', minHeight: '100svh', justifyContent: 'space-between', padding: '40px 24px 44px' }}>
                 <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ textAlign: 'center', color: 'var(--gold-light)', fontSize: 11 }}>
-                    Together With Their Families
+                    Together With Our Families
                 </motion.div>
 
                 <div style={{ textAlign: 'center', color: 'var(--text-on-dark)' }}>
@@ -37,7 +37,7 @@ export default function HeroSlide() {
                     <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85, duration: 0.8 }} className="eyebrow" style={{ marginTop: 22, display: 'flex', justifyContent: 'center', gap: 18, flexWrap: 'wrap', fontSize: 11, color: 'var(--gold-light)' }}>
                         <span>20 AUGUST 2026</span>
                         <span style={{ color: 'var(--gold-dim)' }}>&bull;</span>
-                        <span>BENGALURU</span>
+                        <span>MANDAPETA</span>
                     </motion.div>
                 </div>
             </div>

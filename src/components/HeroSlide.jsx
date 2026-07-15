@@ -14,7 +14,7 @@ export default function HeroSlide() {
 
             <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', height: '100%', minHeight: '100svh', justifyContent: 'space-between', padding: 'clamp(32px, 6vw, 56px) clamp(20px, 5vw, 40px) clamp(36px, 6vw, 60px)' }}>
                 <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ textAlign: 'center', color: 'var(--gold-light)', fontSize: 'clamp(10px, 1.4vw, 12px)' }}>
-                    Together With Their Families
+                    Together With Our Families
                 </motion.div>
 
                 <div style={{ textAlign: 'center', color: 'var(--text-on-dark)' }}>

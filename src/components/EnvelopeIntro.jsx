@@ -23,7 +23,7 @@ export default function EnvelopeIntro({ onComplete }) {
                 <img
                     src={envelopeImg || '/envelope.png'}
                     alt="Invitation envelope"
-                    style={{ width: 'min(360px, 86vw)', boxShadow: '0 28px 80px rgba(0,0,0,0.55)', border: '1px solid rgba(201,162,75,0.3)' }}
+                    style={{ width: 'min(420px, 86vw)', boxShadow: '0 28px 80px rgba(0,0,0,0.55)', border: '1px solid rgba(201,162,75,0.3)' }}
                 />
                 <motion.div initial={{ opacity: 0.7 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="eyebrow" style={{ marginTop: 22, padding: '11px 22px', border: '1px solid rgba(201,162,75,0.4)', color: 'var(--gold-light)', fontSize: 11 }}>
                     Tap To Open

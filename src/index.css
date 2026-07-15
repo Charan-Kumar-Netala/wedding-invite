@@ -18,6 +18,24 @@
   --cream: var(--ivory);
   --text-dark: var(--text-on-light);
   --text-medium: var(--text-muted-light);
+
+  /* responsive invite column width: phones -> small tablets -> tablets/laptops -> desktop */
+  --container-max: 430px;
+}
+
+/* small tablets, large phones landscape */
+@media (min-width: 700px) {
+  :root { --container-max: 560px; }
+}
+
+/* tablets / laptops */
+@media (min-width: 1024px) {
+  :root { --container-max: 640px; }
+}
+
+/* large desktop monitors */
+@media (min-width: 1440px) {
+  :root { --container-max: 720px; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,11 +64,25 @@ body {
 }
 
 #root {
-  height: 100% !important;
-  max-width: 430px;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
-  overflow: hidden !important;
+  overflow-x: hidden;
   background: var(--ink);
+  position: relative;
+  transition: max-width 0.2s ease;
+}
+
+/* frame the invite like a printed card once there's room either side of it */
+@media (min-width: 700px) {
+  #root {
+    box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.22), 0 40px 100px rgba(0, 0, 0, 0.45);
+  }
+
+  body {
+    background: radial-gradient(circle at 50% 20%, var(--ink-soft) 0%, var(--ink) 65%);
+  }
 }
 
 .main-snap-container {
@@ -66,6 +98,43 @@ body {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+/* event detail table: stacked rows on phones, 2x2 grid from tablet width up */
+.detail-table {
+  border: 1px solid var(--line-color, rgba(201, 162, 75, 0.35));
+}
+
+.detail-row {
+  padding: 14px 16px;
+  border-top: 1px solid var(--line-color, rgba(201, 162, 75, 0.35));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.detail-row:first-child {
+  border-top: none;
+}
+
+@media (min-width: 640px) {
+  .detail-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .detail-row {
+    padding: 18px 22px;
+  }
+
+  .detail-row:nth-child(2) {
+    border-top: none;
+  }
+
+  .detail-row:nth-child(even) {
+    border-left: 1px solid var(--line-color, rgba(201, 162, 75, 0.35));
+  }
 }
 
 h1,

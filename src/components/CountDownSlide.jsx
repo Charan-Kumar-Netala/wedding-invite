@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { useCountDown } from '../hooks/useCountDown'
 import BotanicalOrnament from './BotanicalOrnament'
+import ConfettiBurst from './ConfettiBurst'
 
 export default function CountDownSlide({ targetDate = '2026-08-20' }) {
     const { days, hours, minutes, seconds } = useCountDown(targetDate)
+    const [celebrate, setCelebrate] = useState(false)
 
     const boxes = [
         { label: 'Days', value: days ?? '--' },
@@ -14,11 +17,15 @@ export default function CountDownSlide({ targetDate = '2026-08-20' }) {
 
     return (
         <section style={{ padding: '64px 24px', textAlign: 'center', background: 'var(--ink)' }}>
-            <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.3 }} onViewportEnter={() => setCelebrate(true)} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
                 <div className="eyebrow" style={{ fontSize: 11, color: 'var(--gold)' }}>Counting Down To</div>
                 <h2 style={{ margin: '14px 0 0', color: 'var(--gold-light)', fontFamily: 'Great Vibes, serif', fontWeight: 400, fontSize: '2.4rem' }}>Our Wedding Day</h2>
 
-                <div style={{ display: 'flex', justifyContent: 'center', margin: '18px 0 26px' }}>
+                <div>
+                    <ConfettiBurst active={celebrate} />
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'center', margin: '4px 0 26px' }}>
                     <BotanicalOrnament color="#a3854c" width={120} />
                 </div>
 

@@ -48,21 +48,21 @@ export default function App() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 120, damping: 30 })
 
   const events = [
-    { label: 'THE FIRST HUES OF LOVE', heading: 'Mehendi', headingColor: '#1e5c2a', description: 'Begin with henna, music and memories under the warm glow of sunset.', date: '20 August 2026', time: '05:00 PM onwards', venue: 'Garden Lawn, Bengaluru', dressCode: 'Boho Chic' },
-    { label: 'THE BRIGHT DAY', heading: 'Haldi', headingColor: '#7a4e00', description: 'A joyful turmeric ceremony filled with laughter, blooms and blessings.', date: '21 August 2026', time: '09:00 AM onwards', venue: 'Royal Patio, Bengaluru', dressCode: 'Bright Yellow' },
-    { label: 'THE EVENING MEAL', heading: 'Haldi Dinner', headingColor: '#6b1e48', description: 'Gather for a candlelit dinner with family and close friends.', date: '21 August 2026', time: '07:30 PM onwards', venue: 'The Grand Hall, Bengaluru', dressCode: 'Semi-formal' },
-    { label: 'THE WEDDING', heading: 'Wedding', headingColor: '#5a3200', description: 'Join us as we tie the knot and celebrate this beautiful beginning.', date: '22 August 2026', time: '06:00 PM onwards', venue: 'Mahalakshmi Palace, Bengaluru', dressCode: 'Traditional' },
+    { label: 'The First Hues Of Love', heading: 'Mehendi', description: 'Begin with henna, music and memories under the warm glow of sunset.', date: '20 August 2026', time: '05:00 PM onwards', venue: 'Garden Lawn, Bengaluru', dressCode: 'Boho Chic', dark: false },
+    { label: 'The Bright Day', heading: 'Haldi', description: 'A joyful turmeric ceremony filled with laughter, blooms and blessings.', date: '21 August 2026', time: '09:00 AM onwards', venue: 'Royal Patio, Bengaluru', dressCode: 'Bright Yellow', dark: true },
+    { label: 'The Evening Meal', heading: 'Haldi Dinner', description: 'Gather for a candlelit dinner with family and close friends.', date: '21 August 2026', time: '07:30 PM onwards', venue: 'The Grand Hall, Bengaluru', dressCode: 'Semi-formal', dark: false },
+    { label: 'The Wedding', heading: 'Wedding', description: 'Join us as we tie the knot and celebrate this beautiful beginning.', date: '22 August 2026', time: '06:00 PM onwards', venue: 'Mahalakshmi Palace, Bengaluru', dressCode: 'Traditional', dark: true },
   ]
 
   return (
-    <div style={{ background: '#fcf7ee' }}>
+    <div style={{ background: 'var(--ink)' }}>
       {!inviteOpen && <EnvelopeIntro onComplete={() => { sessionStorage.setItem('invited', 'true'); setInviteOpen(true) }} />}
 
       {inviteOpen && (
         <main style={{ overflowX: 'hidden' }}>
-          <motion.div style={{ position: 'fixed', right: 0, top: 0, width: '3px', height: '100vh', background: 'linear-gradient(180deg, #c9942a, #f0d080)', transformOrigin: 'top', scaleY, zIndex: 9999 }} />
+          <motion.div style={{ position: 'fixed', right: 0, top: 0, width: '3px', height: '100vh', background: 'linear-gradient(180deg, #c9a24b, #e8cf94)', transformOrigin: 'top', scaleY, zIndex: 9999 }} />
 
-          <button onClick={toggleMute} style={{ position: 'fixed', top: 16, right: 16, zIndex: 99999, width: 42, height: 42, borderRadius: 21, background: 'rgba(0,0,0,0.34)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.25)', color: 'white', fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{isMuted ? '🔈' : '🔊'}</button>
+          <button onClick={toggleMute} style={{ position: 'fixed', top: 16, right: 16, zIndex: 99999, width: 42, height: 42, borderRadius: '50%', background: 'rgba(23,23,15,0.55)', backdropFilter: 'blur(10px)', border: '1px solid rgba(201,162,75,0.4)', color: '#e8cf94', fontSize: 18, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{isMuted ? '🔈' : '🔊'}</button>
 
           <HeroSlide />
           <CountDownSlide targetDate={'2026-08-20'} />

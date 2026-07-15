@@ -1,31 +1,46 @@
 import { motion } from 'framer-motion'
+import BotanicalOrnament from './BotanicalOrnament'
 
-export default function EventSlide({ label, heading, headingColor, description, date, time, venue, dressCode, mapsUrl }) {
+export default function EventSlide({ label, heading, description, date, time, venue, dressCode, mapsUrl, dark = false }) {
+	const bg = dark ? 'var(--ink)' : 'var(--ivory)'
+	const textHeading = dark ? 'var(--gold-light)' : 'var(--text-on-light)'
+	const textBody = dark ? 'var(--text-muted-dark)' : 'var(--text-muted-light)'
+	const lineColor = dark ? 'rgba(201,162,75,0.35)' : 'rgba(163,133,76,0.35)'
+	const rowBg = dark ? 'rgba(201,162,75,0.04)' : 'rgba(163,133,76,0.06)'
+	const labelColor = dark ? 'var(--gold)' : 'var(--gold-dim)'
+	const ornamentColor = dark ? '#a3854c' : '#a3854c'
+
 	return (
-		<section style={{ padding: '36px 18px', minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'linear-gradient(180deg, #faf4e8 0%, #fff 100%)' }}>
-			<motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.7 }} style={{ width: '100%', maxWidth: 420, borderRadius: 30, padding: '24px 20px', background: 'rgba(255,255,255,0.86)', backdropFilter: 'blur(18px)', boxShadow: '0 20px 60px rgba(90, 57, 15, 0.12)', border: '1px solid rgba(201,148,42,0.18)' }}>
-				<div style={{ color: headingColor || '#8f5d17', fontSize: 12, letterSpacing: '0.34em', textTransform: 'uppercase', fontWeight: 700 }}>{label}</div>
-				<h2 style={{ margin: '10px 0 8px', color: headingColor || '#5a3200', fontSize: '1.9rem' }}>{heading}</h2>
-				<p style={{ margin: '0 0 16px', color: '#7d5b34', lineHeight: 1.7 }}>{description}</p>
-				<div style={{ display: 'grid', gap: 10, textAlign: 'left' }}>
-					<div style={{ padding: '12px 14px', borderRadius: 16, background: 'linear-gradient(135deg, #fff8ea, #f1e2c7)' }}>
-						<div style={{ fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#8b5e18' }}>Date</div>
-						<div style={{ marginTop: 4, fontSize: 15, color: '#4e2f0a' }}>{date}</div>
-					</div>
-					<div style={{ padding: '12px 14px', borderRadius: 16, background: 'linear-gradient(135deg, #fff8ea, #f1e2c7)' }}>
-						<div style={{ fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#8b5e18' }}>Time</div>
-						<div style={{ marginTop: 4, fontSize: 15, color: '#4e2f0a' }}>{time}</div>
-					</div>
-					<div style={{ padding: '12px 14px', borderRadius: 16, background: 'linear-gradient(135deg, #fff8ea, #f1e2c7)' }}>
-						<div style={{ fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#8b5e18' }}>Venue</div>
-						<div style={{ marginTop: 4, fontSize: 15, color: '#4e2f0a' }}>{venue}</div>
-					</div>
-					<div style={{ padding: '12px 14px', borderRadius: 16, background: 'linear-gradient(135deg, #fff8ea, #f1e2c7)' }}>
-						<div style={{ fontSize: 11, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#8b5e18' }}>Dress Code</div>
-						<div style={{ marginTop: 4, fontSize: 15, color: '#4e2f0a' }}>{dressCode}</div>
-					</div>
+		<section style={{ padding: '60px 24px', minHeight: '100svh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: bg }}>
+			<motion.div initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} style={{ width: '100%', maxWidth: 420, textAlign: 'center' }}>
+				<div className="eyebrow" style={{ color: labelColor, fontSize: 11 }}>{label}</div>
+				<h2 style={{ margin: '14px 0 6px', color: textHeading, fontFamily: 'Great Vibes, serif', fontWeight: 400, fontSize: '2.3rem' }}>{heading}</h2>
+
+				<div style={{ display: 'flex', justifyContent: 'center', margin: '10px 0 16px' }}>
+					<BotanicalOrnament color={ornamentColor} width={110} />
 				</div>
-				{mapsUrl && <a href={mapsUrl} target="_blank" rel="noreferrer" style={{ display: 'inline-block', marginTop: 14, color: '#a26d0e', fontWeight: 600, textDecoration: 'none' }}>Open map</a>}
+
+				<p style={{ margin: '0 0 22px', color: textBody, lineHeight: 1.8, fontFamily: 'Cormorant Garamond, serif', fontSize: 16 }}>{description}</p>
+
+				<div style={{ display: 'grid', gap: 0, textAlign: 'left', border: `1px solid ${lineColor}` }}>
+					{[
+						{ label: 'Date', value: date },
+						{ label: 'Time', value: time },
+						{ label: 'Venue', value: venue },
+						{ label: 'Dress Code', value: dressCode },
+					].map((row, i) => (
+						<div key={row.label} style={{ padding: '14px 16px', background: i % 2 === 0 ? rowBg : 'transparent', borderTop: i === 0 ? 'none' : `1px solid ${lineColor}`, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10 }}>
+							<span className="eyebrow" style={{ fontSize: 10, color: labelColor }}>{row.label}</span>
+							<span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 15, color: textHeading, textAlign: 'right' }}>{row.value}</span>
+						</div>
+					))}
+				</div>
+
+				{mapsUrl && (
+					<a href={mapsUrl} target="_blank" rel="noreferrer" className="eyebrow" style={{ display: 'inline-block', marginTop: 22, color: labelColor, fontSize: 11, textDecoration: 'none', borderBottom: `1px solid ${lineColor}`, paddingBottom: 3 }}>
+						Open Map
+					</a>
+				)}
 			</motion.div>
 		</section>
 	)

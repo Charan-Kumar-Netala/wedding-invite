@@ -12,17 +12,17 @@ export default function HeroSlide() {
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(23,23,15,0.35) 0%, rgba(23,23,15,0.25) 35%, rgba(23,23,15,0.78) 78%, rgba(23,23,15,0.97) 100%)' }} />
             <div style={{ position: 'absolute', inset: 0, boxShadow: 'inset 0 0 140px rgba(0,0,0,0.55)' }} />
 
-            <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', height: '100%', minHeight: '100svh', justifyContent: 'space-between', padding: '40px 24px 44px' }}>
-                <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ textAlign: 'center', color: 'var(--gold-light)', fontSize: 11 }}>
-                    Together With Our Families
+            <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', height: '100%', minHeight: '100svh', justifyContent: 'space-between', padding: 'clamp(32px, 6vw, 56px) clamp(20px, 5vw, 40px) clamp(36px, 6vw, 60px)' }}>
+                <motion.div initial={{ opacity: 0, y: -14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ textAlign: 'center', color: 'var(--gold-light)', fontSize: 'clamp(10px, 1.4vw, 12px)' }}>
+                    Together With Their Families
                 </motion.div>
 
                 <div style={{ textAlign: 'center', color: 'var(--text-on-dark)' }}>
-                    <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ fontSize: 12, color: 'var(--gold)', marginBottom: 14 }}>
+                    <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="eyebrow" style={{ fontSize: 'clamp(11px, 1.5vw, 13px)', color: 'var(--gold)', marginBottom: 14 }}>
                         Request The Honour Of Your Presence
                     </motion.div>
 
-                    <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1, ease: [0.22, 1, 0.36, 1] }} style={{ margin: 0, fontFamily: 'Great Vibes, serif', fontSize: 'clamp(2.8rem, 9vw, 4rem)', color: 'var(--gold-light)', lineHeight: 1.05, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
+                    <motion.h1 initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 1, ease: [0.22, 1, 0.36, 1] }} style={{ margin: 0, fontFamily: 'Great Vibes, serif', fontSize: 'clamp(2.8rem, 6vw, 4.6rem)', color: 'var(--gold-light)', lineHeight: 1.05, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
                         Charan &amp; Sindhuja
                     </motion.h1>
 
@@ -30,11 +30,11 @@ export default function HeroSlide() {
                         <BotanicalOrnament color="#c9a24b" width={150} />
                     </motion.div>
 
-                    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 15, letterSpacing: '0.08em', color: 'var(--text-muted-dark)' }}>
+                    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.8 }} style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(14px, 1.6vw, 17px)', letterSpacing: '0.08em', color: 'var(--text-muted-dark)' }}>
                         are getting married
                     </motion.div>
 
-                    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85, duration: 0.8 }} className="eyebrow" style={{ marginTop: 22, display: 'flex', justifyContent: 'center', gap: 18, flexWrap: 'wrap', fontSize: 11, color: 'var(--gold-light)' }}>
+                    <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.85, duration: 0.8 }} className="eyebrow" style={{ marginTop: 22, display: 'flex', justifyContent: 'center', gap: 18, flexWrap: 'wrap', fontSize: 'clamp(10px, 1.4vw, 12px)', color: 'var(--gold-light)' }}>
                         <span>20 AUGUST 2026</span>
                         <span style={{ color: 'var(--gold-dim)' }}>&bull;</span>
                         <span>MANDAPETA</span>

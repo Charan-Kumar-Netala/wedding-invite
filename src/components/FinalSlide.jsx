@@ -3,10 +3,10 @@ import BotanicalOrnament from './BotanicalOrnament'
 
 export default function FinalSlide() {
 	return (
-		<section style={{ padding: '64px 24px 72px', textAlign: 'center', background: 'var(--ink)' }}>
-			<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} style={{ maxWidth: 420, margin: '0 auto' }}>
-				<div className="eyebrow" style={{ fontSize: 11, color: 'var(--gold)' }}>With Love</div>
-				<h2 style={{ margin: '14px 0 0', color: 'var(--gold-light)', fontSize: '2.5rem', fontFamily: 'Great Vibes, serif', fontWeight: 400 }}>Charan &amp; Sindhuja</h2>
+		<section style={{ padding: 'clamp(48px, 8vw, 90px) clamp(20px, 5vw, 40px) clamp(56px, 9vw, 100px)', textAlign: 'center', background: 'var(--ink)' }}>
+			<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }} style={{ maxWidth: 460, margin: '0 auto' }}>
+				<div className="eyebrow" style={{ fontSize: 'clamp(10px, 1.4vw, 12px)', color: 'var(--gold)' }}>With Love</div>
+				<h2 style={{ margin: '14px 0 0', color: 'var(--gold-light)', fontSize: 'clamp(2.1rem, 5vw, 2.8rem)', fontFamily: 'Great Vibes, serif', fontWeight: 400 }}>Charan &amp; Sindhuja</h2>
 
 				<div style={{ display: 'flex', justifyContent: 'center', margin: '18px 0 22px' }}>
 					<BotanicalOrnament color="#a3854c" width={130} />

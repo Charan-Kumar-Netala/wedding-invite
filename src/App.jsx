@@ -37,6 +37,19 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (!audioRef.current) return
+      if (document.hidden) {
+        audioRef.current.pause()
+      } else if (!isMuted) {
+        audioRef.current.play().catch(() => { })
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+    return () => document.removeEventListener('visibilitychange', handleVisibility)
+  }, [isMuted])
+
   const toggleMute = () => {
     if (audioRef.current) {
       audioRef.current.muted = !isMuted

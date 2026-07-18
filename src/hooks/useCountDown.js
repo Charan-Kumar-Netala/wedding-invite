@@ -5,7 +5,8 @@ export function useCountDown(targetDate) {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const diff = new Date(targetDate) - new Date();
+            const isOffset = 5.5 * 60 * 60 * 1000; // IST is UTC+5:30
+            const diff = new Date(targetDate) - new Date() - isOffset;
             setTime({
                 days: Math.floor(diff / 86400000),
                 hours: Math.floor((diff % 86400000) / 3600000),

@@ -61,8 +61,8 @@ export default function App() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 120, damping: 30 })
 
   const events = [
-    { label: 'The Bright Day', heading: 'Haldi', description: 'A joyful turmeric ceremony filled with laughter, blooms and blessings.', date: '17 August 2026', time: '09:00 AM onwards', venue: "At Groom's House, Modukuru", dressCode: 'Bright Yellow', dark: false },
-    { label: 'The Bride Ceremony', heading: 'Pradhanam', description: 'Join the pradhanam ceremony .', date: '19 August 2026', time: '10:00 AM onwards', venue: "St. Johns Lutheran Church, Vetlapalem", dressCode: 'Traditional', mapsUrl: `https://maps.app.goo.gl/y6iHiSxd96vnCGtP7`, dark: true },
+    { label: 'The Bright Day', heading: 'Haldi', description: 'A joyful turmeric ceremony filled with laughter, blooms and blessings.', date: '17 August 2026', time: '09:00 AM onwards', venue: "At Groom's & Bride's House", dressCode: 'Bright Yellow', dark: false },
+    { label: 'The Bride Ceremony', heading: 'Pradhanam', description: 'A traditional ceremony marking the beginning of the wedding festivities.', date: '19 August 2026', time: '10:00 AM onwards', venue: "St. John's Lutheran Church, Vetlapalem", dressCode: 'Traditional', mapsUrl: `https://maps.app.goo.gl/y6iHiSxd96vnCGtP7`, dark: true },
     { label: 'The Wedding', heading: 'Wedding', description: 'Join us as we tie the knot and celebrate this beautiful beginning.', date: '20 August 2026', time: '10:00 AM onwards', venue: 'Vijay Function Hall, Mandapeta', mapsUrl: `https://maps.app.goo.gl/xT9i2dMQcrfJsevW6`,dressCode: 'Traditional', dark: false },
     { label: 'The Wedding Meal', heading: 'Lunch', description: 'Gather for a delightful meal with family and close friends.', date: '20 August 2026', time: '12:00 PM onwards', venue: 'Vijay Function Hall, Mandapeta', dressCode: 'Semi-formal', dark: true },
     { label: 'The Reception', heading: 'Reception', description: 'Celebrate with us as we enjoy music, dancing, and delicious food.', date: '20 August 2026', time: '01:00 PM onwards', venue: 'Vijay Function Hall, Mandapeta', dressCode: 'Semi-formal', dark: false }, 

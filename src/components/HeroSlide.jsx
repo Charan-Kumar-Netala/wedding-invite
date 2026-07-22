@@ -6,7 +6,7 @@ export default function HeroSlide() {
         <section style={{ position: 'relative', minHeight: '100svh', overflow: 'hidden', background: 'var(--ink)' }}>
             <img
                 src="/couple.jpg"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 12%', filter: 'saturate(0.92) contrast(1.02)' }}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 45%', filter: 'saturate(0.92) contrast(1.02)' }}
                 alt="Couple"
             />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(23,23,15,0.35) 0%, rgba(23,23,15,0.25) 35%, rgba(23,23,15,0.78) 78%, rgba(23,23,15,0.97) 100%)' }} />
